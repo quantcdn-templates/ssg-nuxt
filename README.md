@@ -2,7 +2,7 @@
 
 A Nuxt 3 static site template with Vue 3, configured for deployment to QuantCDN.
 
-[![Deploy to QuantCDN](https://www.quantcdn.io/img/quant-deploy-btn-sml.svg)](https://dashboard.quantcdn.io/projects/add/jamstack/ssg-nuxt)
+[![Deploy to QuantCDN](https://www.quantcdn.io/img/quant-deploy-btn-sml.svg)](https://dashboard.quantcdn.io/deploy/static/ssg-nuxt)
 
 ## Features
 

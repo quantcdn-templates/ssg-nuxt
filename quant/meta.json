@@ -1,6 +1,6 @@
 [{
     "title": "Nuxt (Static Generation)",
-    "url": "/deploy/step-one?template=nuxt",
+    "url": "/deploy/static/ssg-nuxt",
     "summary": "Nuxt 3 static site with Vue 3, auto-imports, and file-based routing.",
     "content": "Build performant static sites with Nuxt 3 and Vue 3. Uses static generation mode for pre-rendered HTML pages. Features auto-imports, file-based routing, and the Vue 3 Composition API. Perfect for marketing sites, blogs, and documentation.",
     "image": "https://raw.githubusercontent.com/quantcdn-templates/ssg-nuxt/main/quant/screenshot.png",
