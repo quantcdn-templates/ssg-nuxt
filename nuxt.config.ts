@@ -6,6 +6,10 @@ export default defineNuxtConfig({
   // Static site generation
   ssr: true,
 
+  nitro: {
+    preset: 'static'
+  },
+
   app: {
     head: {
       title: 'Nuxt Static Site',
