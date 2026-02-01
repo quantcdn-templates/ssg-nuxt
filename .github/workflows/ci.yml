@@ -1,0 +1,52 @@
+# CI workflow for SSG template
+# Validates that the template builds successfully with latest dependencies
+#
+# This workflow:
+# 1. Runs npm install (generates fresh package-lock.json with latest versions)
+# 2. Runs the generate command for static output
+# 3. Validates the output directory exists
+#
+# Scheduled daily to catch breaking changes in dependencies early.
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+  schedule:
+    # Run daily at midnight UTC to catch dependency issues early
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate static site
+        run: npm run generate
+
+      - name: Verify build output
+        run: |
+          if [ -d ".output/public" ]; then
+            echo "✓ Build output directory exists"
+            ls -la .output/public/
+          else
+            echo "✗ Build output directory '.output/public' not found"
+            exit 1
+          fi
